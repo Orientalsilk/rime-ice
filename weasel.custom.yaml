@@ -1,0 +1,8 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: VERSION_MAJOR.VERSION_MINOR.VERSION_PATCH
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Tue Jul 28 16:16:53 2026"
+  rime_version: 1.17.0
+patch:
+  "style/color_scheme": metroblue

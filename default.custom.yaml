@@ -1,0 +1,14 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: VERSION_MAJOR.VERSION_MINOR.VERSION_PATCH
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Tue Jul  7 19:45:59 2026"
+  rime_version: 1.17.0
+patch:
+  schema_list:
+    - {schema: double_pinyin_mspy}
+    - {schema: rime_ice}
+  key_binder:    
+    bindings:
+      - { when: has_menu, accept: comma, send: Page_Up }
+      - { when: has_menu, accept: period, send: Page_Down }
