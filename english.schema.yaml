@@ -1,0 +1,229 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+#
+
+
+schema:
+  schema_id: english   # 必须与文件名 english.schema.yaml 大小写一致（安卓/Linux 区分大小写，写成 English 会找不到方案）
+  name: English
+  version: "2026-01-30"
+  author:
+  description: English
+  dependencies:
+    - en_comment      # 英文释义词库（反查显示释义）
+    - english_full    # 完整英文词库（整词匹配）
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ On, Off ]
+
+engine:
+  processors:
+    - lua_processor@*en_mode_processor
+    - ascii_composer
+    - key_binder
+    - speller
+    - recognizer
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - lua_segmentor@*en_wild_segmentor            # 英文查词：通配符 * _ 和词性 ~
+    - matcher
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - lua_translator@*date_translator                # 日期/时间/星期，跟双拼共用同一份 date_translator.lua
+    - script_translator
+    - table_translator
+    - table_translator@english_exact     # 完整英文词库，只做整词匹配
+    - lua_translator@*en_boost             # 兜底：缩写（leslie's 等）词库没有也能打出
+    - lua_translator@*en_wild_translator          # 英文查词：通配符、词性筛选、连写拆词
+  filters:
+    - lua_filter@*en_comment_filter                 # 英文音标 + 中文释义
+    - lua_filter@*en_spacer                         # 英文词条上屏自动空格（须在倒数第二位
+    - uniquifier
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA'"
+  delimiter: " "
+
+translator:
+  dictionary: english_top
+  enable_encoder: false
+  encode_commit_history: false
+  enable_completion: true
+  # sentence_over_completion: true
+  enable_sentence: false
+  enable_user_dict: false
+  # strict_spelling: false
+  # spelling_hints: 2
+  # initial_quality: 1000
+  comment_format:
+    - xform/^.+$//
+
+# 常用词库（带补全）：不挂在引擎里，只给 en_boost.lua 取「以输入开头的词」用。
+english_pre:
+  dictionary: english_top
+  enable_completion: true
+  enable_sentence: false
+  enable_user_dict: false
+  initial_quality: 1.1
+  comment_format:
+    - xform/.*//
+
+# 完整英文词库，只做整词精确匹配（不补全）：生僻词也能打出来，又不拖慢补全。
+english_exact:
+  dictionary: english
+  enable_completion: false
+  enable_sentence: false
+  enable_user_dict: false
+  initial_quality: 1.1
+  comment_format:
+    - xform/.*//
+
+# 英文精准识别（en_boost.lua）
+en_boost:
+  en_prefix_count: 8
+  prefix_count: 5
+  min_len: 4
+  prefix_min_len: 5
+
+# 英文释义（反查）：在英文候选后面显示音标/中文释义。词库 en_comment.dict.yaml 里已截短并转为简体。
+# 释义里的 @ 表示空格（词库里不能直接写空格），显示时换成空格。
+en_comment:
+  dictionary: en_comment
+  enabled: true         # 设成 false 就不显示音标和释义
+  max_candidates: 12   # 只给靠前的这么多个候选加释义
+
+# 日期/时间（跟 double_pinyin_mspy.schema.yaml 里的配置保持一致，用同一套触发词和格式）
+date_translator:
+  date: date            # 日期： 2022-11-29
+  time: time            # 时间： 18:13
+  week: week            # 星期： 星期二
+  datetime: datetime    # ISO 8601： 2022-11-29T18:13:11+08:00
+  timestamp: timestamp  # 时间戳： 1669716794
+  datezh: datezh        # 中文日期： 二〇二六年二月二十五日 | 二零二六年二月二十五日
+  dateen: dateen        # 英文日期： 英式 8 March 2026 | 美式 March 8, 2026
+  date_formats:
+    - "Y年m月d日"
+    - "Y-m-d"
+    - "Y/m/d"
+    - "Y.m.d"
+    - "Ymd"
+    - "Y年n月j日"
+    - "y年n月j日"
+    - "n月j日"
+  time_formats:
+    - "H:M"
+    - "H点M分"
+    - "H:M:S"
+    - "H时M分S秒"
+    - "AI:M"
+    - "I:M P"
+  datetime_formats:
+    - "Y-m-d H:M:S"
+    - "Y-m-dTH:M:S O"
+    - "YmdHMS"
+    - "Y年m月d日 H点M分"
+    - "y/m/d I:M p"
+
+punctuator:
+ # import_preset: default
+  full_shape:
+    " " : { commit: "　" }
+    ',' : { commit: "，" }
+    # '.' : { commit: "．" }
+    '<' : { commit: "＜" }
+    '>' : { commit: "＞" }
+    '?' : { commit: "？" }
+    # '/' : { commit: "／" }
+    ':' : { commit: "：" }
+    ';' : { commit: "；" }
+    # "'" : { commit: "＇" }
+    '"' : { commit: '＂' }
+    '\\' : { commit: "＼" }
+    '|' : { commit: "｜" }
+    '`' : { commit: "｀" }
+    '~' : { commit: '～' }
+    '!' : { commit: '！' }
+    '@' : { commit: '＠' }
+    '#' : { commit: '＃' }
+    '%' : { commit: '％' }
+    '$' : { commit: '＄' }
+    '^' : { commit: '＾' }
+    '&' : { commit: '＆' }
+    '*' : { commit: '＊' }
+    '(' : { commit: '（' }
+    ')' : { commit: '）' }
+    '_' : { commit: '＿' }
+    # '-' : { commit: '－' }
+    '+' : { commit: '＋' }
+    '=' : { commit: '＝' }
+    '[' : { commit: '［' }
+    ']' : { commit: '］' }
+    '{' : { commit: '｛' }
+    '}' : { commit: '｝' }
+  half_shape:
+    # ' ' : { commit: ' ' }
+    ',' : { commit: "," }
+    # '.' : { commit: "." }
+    '<' : { commit: "<" }
+    '>' : { commit: ">" }
+    '?' : { commit: "?" }
+    # '/' : { commit: "/" }
+    ':' : { commit: ":" }
+    ';' : { commit: ";" }
+    # "'" : { commit: "'" }
+    '"' : { commit: '"' }
+    '\\' : { commit: "\\" }
+    '|' : { commit: "|" }
+    '`' : { commit: "`" }
+    '~' : { commit: '~' }
+    '!' : { commit: '!' }
+    '@' : { commit: '@' }
+    '#' : { commit: '#' }
+    '%' : { commit: '%' }
+    '$' : { commit: '$' }
+    '^' : { commit: '^' }
+    '&' : { commit: '&' }
+    '*' : { commit: '*' }
+    '(' : { commit: '(' }
+    ')' : { commit: ')' }
+    '_' : { commit: '_' }
+    # '-' : { commit: '-' }
+    '+' : { commit: '+' }
+    '=' : { commit: '=' }
+    '[' : { commit: '[' }
+    ']' : { commit: ']' }
+    '{' : { commit: '{' }
+    '}' : { commit: '}' }
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    uppercase: ''
+algebra_common:
+  # - xform/^a/!/
+  # - xform/^e/@/
+  # - xform/^i/,/
+  # - xform/^o/:/
+  # - xform/^u/;/
+  # - derive/[aeiou]//
+  # - xlit/!@,:;/aeiou/
+  # 全小写
+  - derive/^.+$/\L$0/
+  # 全大写
+  - derive/^.+$/\U$0/
+  # 首字母大写
+  - derive/^./\U$0/
+  - derive/^([a-z]{2})/\U$1/
+  - erase/^.$/
