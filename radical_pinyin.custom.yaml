@@ -1,4 +1,0 @@
-patch:
-  # 删除了 radical_pinyin 后的 .schema.yaml
-  speller/algebra:
-    __include: radical_pinyin.schema.yaml:/algebra_double_pinyin_mspy
