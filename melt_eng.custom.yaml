@@ -1,4 +1,0 @@
-patch:
-  # 删除了 melt_eng 后的 .schema.yaml，直接使用 schema_id 引用内部节点
-  speller/algebra:
-    __include: melt_eng.schema.yaml:/algebra_double_pinyin_mspy
