@@ -1,0 +1,11 @@
+# Rime table
+#@/db_name	english
+#@/db_type	tabledb
+#@/rime_version	1.17.0
+#@/tick	5
+do	do	2
+R	r	1
+want	want	1
+wantR	want r	1
+what	what	2
+you	you	2
