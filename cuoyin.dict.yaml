@@ -1,0 +1,333 @@
+# encoding: utf-8
+# Rime dictionary
+#https://github.com/amzxyz/RIME-LMDG
+#错音错字对照表
+---
+name: cuoyin
+version: "LTS-opt"
+sort: by_weight
+...
+株木琅玛	zhū mù láng mǎ	205	有声
+衾何以堪	qīn hé yǐ kān	43	小说
+墨明棋妙	mò míng qí miào	13032	乐队
+压力山大	yā lì shān dà	5312	网络语
+鸭梨山大	yā lí shān dà	5342	网络语
+麻麻赖赖	má má lài lài	16	网络语
+绝代双椒	jué dài shuāng jiāo	858	网络语
+毁人不倦	huǐ rén bú juàn	146	歌曲名
+佛教胜地	fó jiào shèng dì	67	佛教(圣)地
+杉杉来吃	shān shān lái chī	1091	书名
+食话食说	shí huà shí shuō	259	节目
+零零总总	ling ling zong zong	6	林林总总
+弃如敝履	qì rú bì lǚ	486	弃如敝屣(xǐ)
+毛坯房	máo pēi fáng	440	毛坯(pī)房
+卡扣	kǎ kòu	3690	qiǎ kòu
+咔嚓	kā cā	1482	咔嚓(chā)
+味噌	wèi zēng	1043	cēng
+味噌汤	wèi zēng tāng	1008	味噌(cēng)汤
+太差劲	tài chà jìng	89	jìn
+文绉绉	wén zōu zōu	16	zhōu
+大栅栏	dà zhà lán	23	dà shí làn
+粘贴	nián tiē	884	粘(zhān)贴
+曝光	pù guāng	682	曝(bào)光
+东庠岛	dong yang dao	4	东庠(xiáng)岛
+视频	shì píng	682	视频(pín)
+剖腹产	pāo fù chǎn	170	剖(pōu)腹产
+阻塞	zu sai	20	阻塞(sè)
+魔爪	mó zhuǎ	20	zhǎo
+着想	zháo xiǎng	862	着(zhuó)想
+崩溃	bēn kuì	480	崩(bēng)溃
+句芒	jù máng	428	句(gōu)芒
+烘焙	hōng péi	966	hōng bèi
+谄媚	xiàn mèi	410	chǎn mèi
+着落	zháo luò	470	zhuó luò
+胁差	lei cha	73	xié chā
+刚劲	gāng jìn	901	gāng jìng
+井陉	jing jing	110	jǐng xíng
+猇亭	hu ting	46	xiāo tíng
+猇亭区	hu ting qu	88	猇(xiāo)亭区
+屎溺	shǐ nì	546	shǐ niào
+东庠	dong yang	226	dōng xiáng
+莒县	lü xian	237	jǔ xiàn
+浚县	jun xian	448	xùn xiàn
+郯城	ye cheng	297	tán chéng
+丽水	lì shuǐ	580	lí shuǐ
+珲春	huī chūn	667	hún chūn
+甪直	yòng zhí	288	lù zhí
+五厍	wǔ kù	218	wú shè
+台州	tái zhōu	720	tāi zhōu
+膻中	shan zhong	450	膻(dàn)中
+渑池	yíng chí	324	miǎn chí
+渑池	shéng chí	292	miǎn chí
+铅山	qiān shān	234	yán shān
+铅山县	qiān shān xiàn	180	铅(yán)山县
+按耐	àn nài	30	按捺(nà)
+甭介	béng jie	794	甭价(jie)
+别介	bié jie	769	别价(jie)
+槟榔	bīn láng	630	bīng láng
+草薙	cao zhi	948	cǎo tì
+掺和	chān he	538	chān huo
+称职	cheng zhi	1119	chèn zhí
+龇牙	cī yá	11	zī yá
+龇着牙	cī zhe yá	10	zī zhe yá
+龇牙咧嘴	cī yá liě zuǐ	17	zī yá liě zuǐ
+凑活	còu huo	984	凑合(he)
+道行	dào hang	10928	dào héng
+给予	gěi yǔ	350	jǐ yǔ
+厚朴	hòu pǔ	588	hòu pò
+馄饨	hun dun	8209	hún tun
+角色	jiǎo sè	686	jué sè
+结扎	jié zhā	130	jié zā
+钜惠	jù huì	1033	(巨)惠
+主角	zhǔ jiǎo	1195	zhǔ jué
+女主角	nǚ zhǔ jiǎo	200	nǚ zhǔ jué
+埋怨	mái yuàn	439	mán yuàn
+模板	mó bǎn	1172	mú bǎn
+模具	mó jù	218	mú jù
+模样	mó yàng	519	mú yàng
+人模狗样	rén mó gǒu yàng	15	rén mú góu yàng
+一模一样	yì mó yí yàng	902	yì mú yí yàng
+有模有样	yǒu mó yǒu yàng	28	yǒu mú yǒu yàng
+装模作样	zhuāng mó zuò yàng	49	zhuāng mú zuò yàng
+木讷	mù nà	470	mù nè
+弄堂	nòng táng	855	lòng táng
+暖和	nuǎn he	590	nuǎn huo
+偌大	nuò dà	680	偌(ruò)大
+强劲	qiáng jìn	568	qiáng jìng
+说服	shuì fú	1033	shuō fú
+似的	sì de	821	似(shì)的
+调换	tiáo huàn	620	diào huàn
+胴体	tóng tǐ	837	dòng tǐ
+荨麻	xún má	124	qián má
+荨麻疹	qián má zhěn	200	xún má zhěn
+亳州	háo zhōu	500	bó zhōu
+天秤座	tiān píng zuò	100	秤(chèng)
+戛然而止	ga ran er zhi	590	戛(jiá)然而止
+自怨自艾	zì yuàn zì ài	520	自怨自艾(yì)
+洪洞	hóng dòng	2918	hóng tóng
+蔚县	wèi xiàn	1094	yù xiàn
+嵊州	chéng zhōu	762	shèng zhōu
+吱声	zhī shēng	1468	zī shēng
+脖颈	bó jǐng	480	bó gěng
+脖颈儿	bó jǐng er	10	bó gěng er
+草薙剑	cao zhi jian	318	cǎo tì jiàn
+草薙京	cao zhi jing	254	cǎo tì jīng
+大宛马	dà wǎn mǎ	10	dà yuān mǎ
+独乐乐	dú lè lè	10	dú yuè lè
+海参崴	hǎi shēn wēi	385	hǎi shēn wǎi
+贾平凹	jià píng wā	250	jiǎ píng āo
+卡脖子	kǎ bó zi	310	qiǎ bó zi
+六安	liù ān	628	lù ān
+六安市	liù ān shì	88	lù ān shì
+六安县	liù ān xiàn	10	lù ān xiàn
+六合区	liù hé qū	115	lù hé qū
+安徽六安	an hui liu an	2	ān huī lù ān
+南京六合	nán jīng liù hé	1	nán jīng lù hé
+安徽六安市	ān huī liù ān shì	1	ān huī lù ān shì
+南京六合区	nán jīng liù hé qū	1	nán jīng lù hé qū
+安徽省六安市	ān huī shěng liù ān shì	1	ān huī shěng lù ān shì
+南京市六合区	nán jīng shì liù hé qū	1	nán jīng shì lù hé qū
+螺蛳粉	luó shī fěn	150	luó sī fěn
+温庭筠	wēn tíng jūn	210	温庭筠(yún)
+关卡	guān kǎ	14734	guān qiǎ
+牛皮癣	niú pí xiǎn	289	(癣)xuǎn
+三昧真火	sān wèi zhēn huǒ	440	三昧(mèi)真火
+优惠券	yōu huì juàn	420	优惠券(quàn)
+没食子	méi shí zǐ	304	没(mò)食子
+魔蝎座	mó xiē zuò	403	摩羯(jié)座
+鄱阳湖	pan yang hu	250	pó yáng hú
+契科夫	qī kē fū	524	契诃(hē)夫
+太行山	tài xíng shān	390	tài háng shān
+头皮屑	tóu pí xuè	530	tóu pi xiè
+万柏林	wàn bó lín	10	万柏(bǎi)林
+雪佛兰	xuě fó lán	370	xuě fú lán
+鸭绿江	yā lǜ jiāng	150	yā lù jiāng
+张柏芝	zhāng bǎi zhī	1056	zhāng bó zhī
+阿弥陀佛	ā mí tuó fó	37	ē mí tuó fó
+南无阿弥陀佛	nā mó ā mí tuó fó	4	nā mó ē mí tuó fó
+南无阿弥陀佛	nán wú ā mí tuó fó	4	nā mó ē mí tuó fó
+南无阿弥陀佛	nán wú ē mí tuó fó	4	nā mó ē mí tuó fó
+黏性流体	zhan xing liu ti	0	粘(黏nián)性流体
+施瓦辛格	si wa xin ge	10	斯(施shī)瓦辛格
+源远流长	yuan yuan liu zhang	100	渊(源yuan)远流长
+按耐不住	àn nài bú zhù	948	按捺(nà)不住
+大腹便便	dà fù biàn biàn	15	dà fù pián pián
+歇斯底里	jiē sī dǐ lǐ	88	xiē sī dǐ lǐ
+力能扛鼎	lì néng káng dǐng	3	lì néng gāng dǐng
+模棱两可	mó líng liǎng kě	85	mó léng liǎng kě
+心宽体胖	xīn kuān tǐ pàng	4	xīn kūan tǐ pán
+虚与委蛇	xu yu wei she	9	xū yǔ wēi yí
+血脉偾张	xuè mài fèn zhāng	265	血脉贲(bēn)张 | 血脉偾(fèn)张
+血脉喷张	xuè mài pēn zhāng	750	血脉贲(bēn)张 | 血脉偾(fèn)张
+饮鸩解渴	yǐn jiù jiě kě	1	饮鸩(zhèn)解渴
+饮鸩止渴	yǐn jiù zhǐ kě	34	饮鸩(zhèn)止渴
+蓦然回首	mù rán huí shǒu	39	蓦(mò)然回首
+拾级而上	shí jí ér shàng	64	拾(shè)级而上
+龟裂	guī liè	64	jūn liè
+比萨饼	pi sa bing	6	bǐ sà bǐng
+鞭挞	bian da	2	鞭挞(tà)
+鞭笞	bian tai	2	鞭笞(chī)
+瞠目结舌	tang mu jie she	2	瞠(chēng)目结舌
+肄业	si ye	2	肄(yì)业
+粗糙	cu zao	2	粗糙(cāo)
+堤岸	ti an	40	堤(dī)岸
+饿殍	e fu	2	饿殍(piǎo)
+蛤蜊	ga li	2	蛤(gé)蜊
+角逐	jiao zhu	2	角(jué)逐
+恪守	ge shou	8	恪(kè)守
+面面相觑	mian mian xiang xu	2	面面相觑(qù)
+谬论	miao lun	2	谬(miù)论
+捯饬	dao shang	10	捯饬(chì)
+整饬	zheng shang	40	整饬(chì)
+淙淙	zong zong	6	淙(cóng)淙
+商贾	shang jia	2	商贾(gǔ)
+噱头	ju tou	2	噱(xué)头
+阴霾	yin li	40	阴霾(mái)
+吃比萨	chi pi sa	40	chī bǐ sà
+刹帝利	sha di li	40	chà dì lì
+众乐乐	zhong le le	40	zhòng yuè lè
+贾平凹	jia ping ao	40	jiǎ píng wā
+掺和	can huo	40	chān huo
+掺和	can he	40	chān huo
+发酵	fa xiao	40	fā jiào
+酵母菌	xiao mu jun	40	jiào mǔ jūn
+酵母	xiao mu	40	jiào mǔ
+殷红	yin hong	40	yān hóng
+鄱阳湖	bo yang hu	40	鄱(pó)阳湖
+花斑癣	hua ban xian	40	huā bān xuǎn
+体癣	ti xian	40	tǐ xuǎn
+股癣	gu xian	40	gǔ xuǎn
+脚癣	jiao xian	40	jiǎo xuǎn
+足癣	zu xian	40	zú xuǎn
+南京六合区	nan jing shi liu he	40	nán jīng lù hé qū
+宫商角徵羽	gong shang jiao zhi yu	40	宫商角(jué)徵羽
+氙气灯	shan qi deng	40	氙(xiān)气灯
+氙气大灯	shan qi da deng	40	氙(xiān)气大灯
+氙气手电筒	shan qi shou dian tong	40	氙(xiān)气手电筒
+应该	yin gai	40	应(yīng)该
+粘一粘	nian yi nian	40	粘(zhān)
+吐蕃	tu fan	40	吐蕃(bō)
+吐谷浑	tu gu hun	40	吐谷(yù)浑
+高句丽	gao ju li	40	高句(gōu)丽
+角斗士	jiao dou shi	40	角(jué)斗士
+缩砂密	suo sha mi	40	缩(sù)砂密
+迫击炮	po ji pao	40	迫(pǎi)击炮
+封禅	feng chan	40	fēng shàn
+芫荽	yuan sui	40	yán suī
+榅桲	wen bo	40	wēn po
+荸荠	bi ji	40	bí qi
+柔荑	rou yi	40	róu tí
+柔荑花序	rou yi hua xu	40	柔荑(tí)花序
+手如柔荑	shou ru rou yi	40	手如柔荑(tí)
+朱祐樘	zhu you tang	40	朱祐樘(chēng)
+青𬞟之末	qing ping zhi mo	40	青𬞟(pín)之末
+起于青𬞟之末	qi yu qing ping zhi mo	40	起于青𬞟(pín)之末
+风起于青𬞟之末	feng qi yu qing ping zhi mo	40	风起于青𬞟(pín)之末
+拱券	gong quan	40	gǒng xuàn
+哺乳	pu ru	40	bǔ rǔ
+脑卒中	nao zu zhong	40	nǎo cù zhòng
+阈值	fa zhi	40	yù zhí
+潟湖	xie hu	40	xì hú
+果脯	guo pu	40	guǒ fǔ
+肉脯	rou pu	40	ròu fǔ
+饸饹	huo luo	40	hé le
+脯氨酸	pu an suan	40	脯(fǔ)氨酸
+酪氨酸	luo an suan	40	酪(lào)氨酸
+裳凤蝶	shang feng die	40	裳(cháng)凤蝶
+白𬶨豚	bai qi tun	40	bái jì tún
+桡骨	nao gu	40	ráo gǔ
+百折不挠	bai zhe bu rao	40	百折不挠(náo)
+椎心泣血	zhui xin qi xie	40	椎(chuí)心泣血
+椎心泣血	zhui xin qi xue	40	椎(chuí)心泣血
+挟持	xia chi	40	挟(xié)持
+牛丼	niu jing	40	牛丼(dǎn)
+牛丼饭	niu jing fan	40	牛丼(dǎn)饭
+安瓿	an pou	40	安瓿(bù)
+安瓿瓶	an pou ping	40	安瓿(bù)瓶
+解剖	jie pao	40	jiě pōu
+剖分	pao fen	40	pōu fēn
+剖宫产	pao gong chan	40	剖(pōu)宫产
+金匮	jin kui	40	金匮(guì)
+清平乐	qing ping le	40	清平乐(yuè)
+踏莎行	ta sha xing	40	踏莎(suō)行
+莎草	sha cao	40	suō cǎo
+杉木	shan mu	40	shā mù
+苣荬菜	ju mai cai	40	qǔ mǎi cài
+李悝	li li	40	lǐ kuī
+跬步	gui bu	40	kuǐ bù
+道在屎溺	dao zai shi ni	40	道在屎溺(niào)
+暴殄天物	bao lian tian wu	40	暴殄(tiǎn)天物
+以己度人	yi ji du ren	40	以己度(duó)人
+一语成谶	yi yu cheng zhen	40	一语成谶(chèn)
+甑糕	jing gao	40	甑(zèng)糕
+胳肢窝	ge zhi wo	40	胳(gā)肢窝
+潏河	yu he	40	潏(jué)河
+校正	xiao zheng	40	校(jiào)正
+校对	xiao dui	40	校(jiào)对
+结束	jie su	40	结束(shù)
+呱呱坠地	gua gua zhui di	40	呱(gū)呱坠地
+拗口	niu kou	40	拗(ào)口
+蚌埠	bang bu	40	蚌(bèng)埠
+裨益	pi yi	40	裨(bì)益
+刚愎自用	gang fu zi yong	40	刚愎(bì)自用
+一叶扁舟	yi ye bian zhou	40	一叶扁(piān)舟
+博闻强识	bo wen qiang shi	40	博闻强识(zhì)
+贲临	ben lin	40	贲(bì)临
+倾轧	qing zha	40	倾轧(yà)
+妊娠	ren chen	40	妊娠(shēn)
+莘莘学子	xin xin xue zi	40	莘(shēn)莘学子
+拓本	tuo ben	40	拓(tà)本
+唾手可得	chui shou ke de	40	唾(tuò)手可得
+吸吮	xi yun	40	吸吮(shǔn)
+心广体胖	xin guang ti pang	40	心广体胖(pán)
+星宿	xing su	40	星宿(xiù)
+赝品	ying pin	40	赝(yàn)品
+一曝十寒	yi bao shi han	40	一曝(pù)十寒
+粗犷	cu kuang	40	粗犷(guǎng)
+巷道	xiang dao	40	巷(hàng)道
+恫吓	tong xia	40	dòng hè
+诡谲	gui ju	40	诡谲(jué)
+游说	you shuo	40	游说(shuì)
+不啻	bu di	40	不啻(chì)
+附骨之疽	fu gu zhi qu	40	附骨之疽(jū)
+扑街	pu jie	40	仆街
+扑街	pu gai	40	仆街
+扑街仔	pu jie zai	40	仆街仔
+扑街仔	pu gai zai	40	仆街仔
+曾今	ceng jin	40	曾经
+找茬	zhao cha	40	找碴
+找茬儿	zhao cha er	40	找碴儿
+大家来找茬	da jia lai zhao cha	40	大家来找碴
+大家来找茬儿	da jia lai zhao cha er	40	大家来找碴儿
+披萨	pi sa	40	比(bǐ)萨
+梗犬	geng quan	40	㹴犬
+油麦菜	you mai cai	40	莜麦菜
+不着痕迹	bù zháo hén jì	100	不着(zhuó)痕迹(jìng)
+粳米	gēng mǐ	100	粳(jīng)米
+籼米	shān mǐ	100	籼(xiān)米
+靓妆	liàng zhuāng	100	靓(jìng)妆
+腈纶	qíng lún	100	腈(jīng)纶
+骠勇	biāo yǒng	100	骠(piào)勇
+剽悍	biāo hàn	100	剽(piāo)悍
+哨卡	shào kǎ	100	哨卡(qiǎ)
+句读	jù dú	100	句读(dòu)
+藤蔓	téng màn	100	藤蔓(wàn)
+炽热	zhì rè	100	炽(chì)热
+秘鲁	mì lǔ	100	秘(bì)鲁
+屏息	píng xī	100	屏(bǐng)息
+猜度	cāi dù	100	猜度(duó)
+踟蹰	zhī chú	100	踟(chí)蹰
+分袂	fēn jué	100	分袂(mèi)
+回溯	huí shuò	100	回溯(sù)
+龋齿	yǔ chǐ	100	龋(qǔ)齿
+吮吸	yǔn xī	100	吮(shǔn)吸
+拓印	tuò yìn	100	拓(tà)印
+豆豉	dòu shì	100	豆豉(chǐ)
+叱咤	chì chà	100	叱咤(zhà)
+喟叹	wèi tàn	100	喟(kuì)叹
+牛虻	niú máng	100	牛虻(méng)
+蓦然	mù rán	100	蓦(mò)然
+箴言	jiān yán	100	箴(zhēn)言
+咋舌	zǎ shé	100	咋(zé)舌
+混淆	hùn yáo	100	混淆(xiáo)
+流水淙淙	liú shuǐ zōng zōng	100	流水淙(cóng)淙
