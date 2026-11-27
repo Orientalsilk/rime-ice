@@ -1,0 +1,79 @@
+# Rime table
+# coding: utf-8
+#@/db_name	custom_phrase_double.txt
+#@/db_type	tabledb
+#
+# 微软双拼自定义短语（Tab 分隔：词<Tab>编码<Tab>权重）
+# 编码尽量用非完整双拼，避免挡造词
+#
+# version: "2026-08-03"
+
+# —— 单字母/短码常用 ——
+的	d	9
+了	l	9
+是	u	9
+在	z	8
+有	y	8
+和	h	7
+就	j	7
+不	b	8
+我	w	9
+你	n	9
+他	t	8
+这	v	8
+个	g	7
+也	e	6
+吧	b	5
+
+# —— 生活/办公 ——
+谢谢	xx	9
+谢谢	xiexie	8
+你好	nh	9
+你好	nihao	8
+请查收	qcs	9
+辛苦了	xkl	9
+没问题	mwt	9
+稍等	ud	8
+稍后	uh	8
+收到	udao	8
+好的	hd	9
+可以	ky	9
+不行	bx	8
+在吗	zm	8
+在的	zd	7
+靳来江	jnlljd
+靳来勇	jnllys
+靳智翔	jnvixd
+靳智尧	jnviyk
+靳智淇	jnviqi
+靳智凯	jnvikl
+靳守郑	jnubvg
+汪跃花	whythw
+张艳	vhyj
+# —— 时间日期快捷（配合 Lua 触发词以外的纯文本）——
+今天	jt	8
+明天	mt	8
+后天	ht	7
+昨天	zt	7
+现在	xz	8
+
+# —— 编程/英文名固定，防止被纠错挤掉 ——
+Amazon	amazon	9
+GitHub	github	9
+Google	google	9
+Python	python	9
+JavaScript	js	8
+TypeScript	ts	7
+Kubernetes	k8s	8
+TODO	todo	9
+FIXME	fixme	8
+NOTE	note	7
+
+# —— 邮箱/签名类（请改成自己的）——
+info@toportable.com	mail	6
+jinleslie@gmail.com	mail	9
+jinleslie@hotmail.com	mail	8
+leslie.jin@hotmail.com	mail	7
+fesmall.com@gmail.com	mail	5
+ezlinktrade@gmail.com	mail	4
+orientalsilk@gmail.com	mail	3
