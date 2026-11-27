@@ -41,6 +41,15 @@
 不行	bx	8
 在吗	zm	8
 在的	zd	7
+靳来江	jnlljd
+靳来勇	jnllys
+靳智翔	jnvixd
+靳智尧	jnviyk
+靳智淇	jnviqi
+靳智凯	jnvikl
+靳守郑	jnubvg
+汪跃花	whythw
+张艳	vhyj
 # —— 时间日期快捷（配合 Lua 触发词以外的纯文本）——
 今天	jt	8
 明天	mt	8
