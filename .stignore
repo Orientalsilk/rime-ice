@@ -1,0 +1,9 @@
+build/
+build/**
+installation.yaml
+default.custom.yaml
+user.yaml
+*.userdb/
+*.userdb/**
+(?d)english.userdb
+(?d)leslie.userdb
