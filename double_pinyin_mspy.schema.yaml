@@ -58,7 +58,7 @@ switches:
 # 输入引擎
 engine:
   processors:
-    - lua_processor@*lag_probe_processor           # 卡顿探针：慢的按键记到 lag_probe.log
+    # - lua_processor@*lag_probe_processor         # 卡顿探针：慢的按键记到 lag_probe.log（调试时再开启）
     - lua_processor@*en_mode_processor             # 英文模式切换时同步英文标点
     - lua_processor@*select_character  # 以词定字
     - lua_processor@*cold_word_drop.processor  # 词条隐藏/降频/删词 快捷键
@@ -111,7 +111,7 @@ engine:
     - simplifier@traditionalize                     # 简繁切换
     - lua_filter@*cn_en_spacer                      # 中英混输词条自动空格
     - lua_filter@*en_spacer                         # 英文词条上屏自动空格（须在倒数第二位）
-    - lua_filter@*lag_probe_filter                  # 卡顿探针（须在 uniquifier 前面）
+    # - lua_filter@*lag_probe_filter                # 卡顿探针（须在 uniquifier 前面，调试时再开启）
     - uniquifier                                    # 去重
 
 
@@ -390,7 +390,6 @@ editor:
     Control+BackSpace: back_syllable      # Ctrl+退格键：删除一个音节
     Control+Delete: delete_candidate      # Ctrl+Delete键：删除或降权候选项
     Escape: cancel                        # Esc 键：取消输入
-    Shift_comp: ;
 
 # 拼写设定
 speller:
