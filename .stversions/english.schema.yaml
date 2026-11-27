@@ -1,0 +1,176 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+#
+
+
+schema:
+  schema_id: english   # 必须与文件名 english.schema.yaml 大小写一致（安卓/Linux 区分大小写，写成 English 会找不到方案）
+  name: English
+  version: "2026-01-30"
+  author:
+  description: English
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ On, Off ]
+
+engine:
+  processors:
+    - lua_processor@*schema_switch
+    - lua_processor@*easy_en*processor
+    - ascii_composer
+    - key_binder
+    - speller
+    - recognizer
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - matcher
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - lua_translator@*date_translator                # 日期/时间/星期，跟双拼共用同一份 date_translator.lua
+    - script_translator
+    - table_translator
+    - lua_translator@*easy_en*translator
+    - lua_translator@*en_boost             # 兜底：词库没有的词（含单引号）也能原样打出
+  filters:
+    - lua_filter@*en_spacer                         # 英文词条上屏自动空格（须在倒数第二位
+    - uniquifier
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA'"
+  delimiter: " "
+
+
+
+translator:
+  dictionary: english
+  enable_encoder: false
+  encode_commit_history: false
+  enable_completion: true
+  # sentence_over_completion: true
+  enable_sentence: false
+  enable_user_dict: false
+  # strict_spelling: false
+  # spelling_hints: 2
+  # initial_quality: 1000
+  comment_format:
+    - xform/^.+$//
+
+# 日期/时间（跟 double_pinyin_mspy.schema.yaml 里的配置保持一致，用同一套触发词和格式）
+date_translator:
+  date: date            # 日期： 2022-11-29
+  time: time            # 时间： 18:13
+  week: week            # 星期： 星期二
+  datetime: datetime    # ISO 8601： 2022-11-29T18:13:11+08:00
+  timestamp: timestamp  # 时间戳： 1669716794
+  datezh: datezh        # 中文日期： 二〇二六年二月二十五日 | 二零二六年二月二十五日
+  dateen: dateen        # 英文日期： 英式 8 March 2026 | 美式 March 8, 2026
+  date_formats:
+    - "Y年m月d日"
+    - "Y-m-d"
+    - "Y/m/d"
+    - "Y.m.d"
+    - "Ymd"
+    - "Y年n月j日"
+    - "y年n月j日"
+    - "n月j日"
+  time_formats:
+    - "H:M"
+    - "H点M分"
+    - "H:M:S"
+    - "H时M分S秒"
+    - "AI:M"
+    - "I:M P"
+  datetime_formats:
+    - "Y-m-d H:M:S"
+    - "Y-m-dTH:M:S O"
+    - "YmdHMS"
+    - "Y年m月d日 H点M分"
+    - "y/m/d I:M p"
+
+punctuator:
+ # import_preset: default
+  full_shape:
+    " " : { commit: "　" }
+    ',' : { commit: "，" }
+    # '.' : { commit: "．" }
+    '<' : { commit: "＜" }
+    '>' : { commit: "＞" }
+    '?' : { commit: "？" }
+    # '/' : { commit: "／" }
+    ':' : { commit: "：" }
+    ';' : { commit: "；" }
+    # "'" : { commit: "＇" }
+    '"' : { commit: '＂' }
+    '\\' : { commit: "＼" }
+    '|' : { commit: "｜" }
+    '`' : { commit: "｀" }
+    '~' : { commit: '～' }
+    '!' : { commit: '！' }
+    '@' : { commit: '＠' }
+    '#' : { commit: '＃' }
+    '%' : { commit: '％' }
+    '$' : { commit: '＄' }
+    '^' : { commit: '＾' }
+    '&' : { commit: '＆' }
+    '*' : { commit: '＊' }
+    '(' : { commit: '（' }
+    ')' : { commit: '）' }
+    '_' : { commit: '＿' }
+    # '-' : { commit: '－' }
+    '+' : { commit: '＋' }
+    '=' : { commit: '＝' }
+    '[' : { commit: '［' }
+    ']' : { commit: '］' }
+    '{' : { commit: '｛' }
+    '}' : { commit: '｝' }
+  half_shape:
+    # ' ' : { commit: ' ' }
+    ',' : { commit: "," }
+    # '.' : { commit: "." }
+    '<' : { commit: "<" }
+    '>' : { commit: ">" }
+    '?' : { commit: "?" }
+    # '/' : { commit: "/" }
+    ':' : { commit: ":" }
+    ';' : { commit: ";" }
+    # "'" : { commit: "'" }
+    '"' : { commit: '"' }
+    '\\' : { commit: "\\" }
+    '|' : { commit: "|" }
+    '`' : { commit: "`" }
+    '~' : { commit: '~' }
+    '!' : { commit: '!' }
+    '@' : { commit: '@' }
+    '#' : { commit: '#' }
+    '%' : { commit: '%' }
+    '$' : { commit: '$' }
+    '^' : { commit: '^' }
+    '&' : { commit: '&' }
+    '*' : { commit: '*' }
+    '(' : { commit: '(' }
+    ')' : { commit: ')' }
+    '_' : { commit: '_' }
+    # '-' : { commit: '-' }
+    '+' : { commit: '+' }
+    '=' : { commit: '=' }
+    '[' : { commit: '[' }
+    ']' : { commit: ']' }
+    '{' : { commit: '{' }
+    '}' : { commit: '}' }
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    uppercase: ''
