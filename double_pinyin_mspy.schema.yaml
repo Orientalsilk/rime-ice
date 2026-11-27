@@ -211,8 +211,12 @@ pin_cand_filter:
 # 主翻译器，拼音
 grammar:
   language: qwen14b-zh-hans
+  collocation_max_length: 5
+  collocation_min_length: 2
+  collocation_penalty: -12
+  rear_penalty: -18
 translator:
-  dictionary: leslie         # 挂载词库 rime_ice.dict.yaml
+  dictionary: leslie         # 挂载词库 leslie.dict.yaml
   prism: double_pinyin_mspy     # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字。
   enable_word_completion: true  # 大于 4 音节的词条自动补全，librime > 1.11.2
   enable_user_dict: true
