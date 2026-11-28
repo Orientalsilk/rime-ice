@@ -37,7 +37,7 @@ style:
   keyboard_padding: 0
   keyboard_padding_left: 0
   keyboard_padding_right: 0
-  keyboard_padding_bottom: 0
+  keyboard_padding_bottom: 10
   keyboard_padding_land: 60
   keyboard_padding_land_bottom: 0
   key_font: symbol.ttf #["LucidaGrande.ttc"]
@@ -288,7 +288,7 @@ preset_color_schemes:
     hilited_on_key_text_color: 0xffe1e1e1
     hilited_text_color: 0xff23948e
     key_back_color: 0x8c303030
-    key_border_color: *COLOR_TRANSPARENT
+    key_border_color: 0x000000
     key_symbol_color: 0xff919191
     key_text_color: 0xffe1e1e1
     keyboard_back_color: 0xff1f1f1f
@@ -298,12 +298,12 @@ preset_color_schemes:
     label_color: 0xff919191
     off_key_back_color: 0x8c303030
     off_key_text_color: 0xffe1e1e1
-    on_key_back_color: *COLOR_ICE_DARK
-    on_key_text_color: *COLOR_WHITE
+    on_key_back_color: 0x8c303030
+    on_key_text_color: 0xffff7200
     popup_back_color: 0xff384451
     preview_back_color: 0xff00434c
     preview_text_color: 0xffe1e1e1
-    shadow_color: *COLOR_TRANSPARENT
+    shadow_color: 0x000000
     text_back_color: 0xee1f1f1f
     text_color: 0xffff7200
     bds: 0xff919191
@@ -408,6 +408,7 @@ liquid_keyboard:
       - Return2
   keyboards:
     - history
+    - clipboard
     # 表情
     - punctuation_cn
     - punctuation_en
@@ -453,6 +454,9 @@ liquid_keyboard:
     - technical
     - symbollist
 
+  clipboard:
+    name: 剪贴
+    type: CLIPBOARD
   history:
     name: 常用
     type: HISTORY
@@ -500,11 +504,11 @@ liquid_keyboard:
   punctuation_cn:
     name: "中文"
     type: SINGLE
-    keys: [ "，", "。", "、", "？", "！", "：", "；", "·", "……", "——", "～", "“ ”", "‘ ’", "（ ）", "【 】", "《 》", "〈 〉", "「 」", "『 』", "〔 〕", "〖 〗", "［ ］", "｛ ｝", "—", "•", "￥", "％", "‰", "℃", "※" ]
+    keys: [ ，, 。, ？, ！, ：, ；, 、, “ ”, ‘ ’, ～, （ ）, 【 】, 《 》, 〈 〉, ［ ］ ,｛ ｝, 「 」, 『 』, 〔 〕, 〖 〗, ｜, ‖, ……, ——, ¡, ¿, ﹏, ﹋, ￣, ¯, ﹍, ﹎]
   punctuation_en:
     name: "英文"
     type: SINGLE
-    keys: ",.!?:;'\"`~()[]{}<>/@#$%^&*-_+=\\|"
+    keys: ",.?!:;*/\\|-+=^$`'\"~@#%&()[]{}_<>%$&·♀♂⸪⸫"
   bracket:
     name: " 括弧 "
     type: SINGLE
@@ -698,7 +702,11 @@ preset_keyboards:
       - {click: Return, composing: Return1, width: 15, swipe_up: Escape, key_text_size: "18", key_back_color: hcb, key_text_color: hct, hilited_key_text_color: hcht, key_symbol_color: hcs, hilited_key_back_color: hch}
 
   double_pinyin_mspy:
+    label_transform: uppercase 
     __include: /preset_keyboards/default
+    ascii_mode: 0
+    reset_ascii_mode: true
+    lock: true
     name: "双拼"
     __patch:
       keys/@19/composing: Shift_comp  # 输入中按 Shift：混输时 = ；(ing)，英文模式时 = 大写下一个字母
@@ -714,7 +722,7 @@ preset_keyboards:
     ascii_mode: 1
     label_transform: none 
     reset_ascii_mode: true
-    # ascii_keyboard: default  # 已移除：切回中文时自动回退到 lastLockKeyboardId（如 double_pinyin_mspy）
+    ascii_keyboard: default
     lock: false
     name: "英文26键"
     keys:
@@ -742,7 +750,7 @@ preset_keyboards:
       - {click: l, popup: ["l-p", "L-p"], swipe_up: "'", label_symbol: "'", swipe_down: '#', hint: '#', key_text_color: TEX, key_back_color: CCC, hilited_key_back_color: CCH}
 
       # 第三行
-      - {click: Shift_L, label_symbol: " ", width: 15, long_click: Shift_L, double_click: Shift_L3, composing: Escape, key_text_size: 16}
+      - {click: Shift_L, label_symbol: " ", width: 15, long_click: Shift_L, double_click: Shift_L3, composing: delimiter, key_text_size: 16}
       - {click: z, popup: ["z-p", "Z-p"], width: 10, swipe_up: '<>{Left}', swipe_left: '<', swipe_right: '>', label_symbol: '<>', swipe_down: '~', hint: '~', symbol_text_size: 12, key_symbol_offset_y: -1, key_hint_offset_y: 2, key_text_color: TEX, key_back_color: AAA, hilited_key_back_color: AAH}
       - {click: x, popup: ["cut", "x-p", "X-p"], width: 10, swipe_up: cut,  label_symbol: 'ic@content-cut', swipe_down: "!", hint: "!", symbol_text_size: 8, key_symbol_offset_y: 3, key_text_color: TEX, key_back_color: BBB, hilited_key_back_color: BBH}
       - {click: c, popup: ["copy", "c-p", "C-p"], width: 10, swipe_up: copy, label_symbol: 'ic@checkbox-multiple-blank-outline', symbol_text_size: 8, key_symbol_offset_y: 3, key_text_color: TEX, key_back_color: CCC, hilited_key_back_color: CCH}
@@ -885,7 +893,20 @@ preset_keyboards:
 
 preset_keys:
   # 安卓
+  BRIGHTNESS_DOWN: {label: 亮度-, send: BRIGHTNESS_DOWN}
+  BRIGHTNESS_UP: {label: 亮度+, send: BRIGHTNESS_UP}
+  CALCULATOR: {label: 计算机, send: CALCULATOR}
+  CALENDAR: {label: 日历, send: CALENDAR}
+  CONTACTS: {label: 电话簿, send: CONTACTS}
+  ENVELOPE: {label: 信箱, send: ENVELOPE}
+  EXPLORER: {label: 浏览器, send: EXPLORER}
+  MUSIC: {label: 音乐, send: MUSIC}
+  POWER: {label: 电源, send: POWER}
+  SLEEP: {label: 休眠, send: SLEEP}
   VOICE_ASSIST: {label: 🎙, functional: true, send: VOICE_ASSIST}
+  VOLUME_DOWN: {label: 音量-, send: VOLUME_DOWN}
+  VOLUME_UP: {label: 音量+, send: VOLUME_UP}
+  VOLUME_MUTE: {label: 静音, send: VOLUME_MUTE}
    # 编辑
   Shift_L: {label: Shift, preview: '⇪', functional: false, send: Shift_L}
   Shift_L3: {label: ⇪, preview: '⇪', functional: false, send: Shift_L, shift_lock: click}
@@ -895,15 +916,19 @@ preset_keys:
   Hide: {label: 隐藏, send: BACK}
   BackSpace: {label: ⌫, preview: '⇦', repeatable: true, functional: false, send: BackSpace}
   BackSpace1: {label: ' ⌫ ', preview: '⇦', repeatable: true, functional: false, slide_delete: true, send: BackSpace}
+  space: {label: '', slide_cursor: true, send: space}
  # space: {label: 'ic@resistor', slide_cursor: true, send: space}
   space1: {label: '  ⎵ ', send: space}
   space2: {label: ic@keyboard-space, slide_cursor: true, send: space}  #用于数字键盘空格的展现形式
   Clear: {label: Clear, functional: false, text: "{Control+a}{Delete}"}
   Escape: {label: 取消, functional: false, send: Escape}
-  Shift_comp: {toggle: en_mode, states: [ ";", "⇧" ], functional: false, send: Control+Shift+9}
+  Shift_comp: {toggle: en_mode, states: [ ";", "⇪" ], functional: false, send: Control+Shift+9}
   Home: {label: 'ic@page-first', send: Home, functional: false}
+  Delete: {label: 删除, send: Delete, functional: false}
   Delete1: {label: Del, send: Delete, functional: false}
   End: {label: 'ic@page-last', send: End, functional: false}
+  Page_Up: {label: '上页', send: Page_Up, functional: false}
+  Page_Down: {label: '下页', send: Page_Down, functional: false}
   Left: {label: ' ← ', send: Left, repeatable: true, functional: false}
   Down: {label: '↓', send: Down, functional: false}
   Up: {label: '↑', send: Up, functional: false}
@@ -925,20 +950,24 @@ preset_keys:
 
 
   # rime组合键
+  F4: {label: 方案菜单, send: F4}
   #切换键盘
   Keyboard_cn_en: { toggle: ascii_mode, label: 中英, functional: false, send: Eisu_toggle, select: .ascii }
   Keyboard_default: { label: ic@keyboard-outline, functional: false, send: Eisu_toggle, select: .default }
+  Keyboard_letter: { label: ic@keyboard-outline, functional: false, send: Eisu_toggle, select: .letter }
   Keyboard_number: { label: ic@numeric, functional: false, send: Eisu_toggle, select: number }
   Keyboard_numberb: { label: ☩, functional: false, send: Eisu_toggle, select: numberb, label_text_size: 12 }
   Keyboard_numbercn: { label: ㊥, functional: false, send: Eisu_toggle, select: numbercn }
   Keyboard_last_lock: { label: ic@keyboard-outline, send: Eisu_toggle, select: .last_lock } #直接切换到下一键盘
   liquid_keyboard_exit: {label: ' ⌨ ', send: FUNCTION, command: liquid_keyboard, option: "-1", label_text_size: 10}  #退出liquidkeyboard
+  liquid_keyboard_emoji: { label: ☻, send: FUNCTION, command: liquid_keyboard, option: "😀" }
   keyboard_punctuation_cn: { label: ⌘, send: FUNCTION, command: liquid_keyboard, option: "中文" }
 
 
   menu_keyboard: { label: 菜单, send: FUNCTION, command: menu_keyboard }
   clipboard_window: { label: "ic@clipboard-multiple-outline", send: FUNCTION, command: "clipboard_window"}
   # rime状态
+  Mode_switch: {toggle: ascii_mode, functional: true, send: SWITCH_CHARSET, states: [ 中文, ABC ]}
   # 逗号、句号：标点是英文/中文随 ascii_punct 显示（英文模式下自动是英文标点）
   Comma_en: {label: ",", functional: false, send: comma}   # 英文键盘（ascii_mode）下的逗号
   Period_en: {label: ".", functional: false, send: period}   # 英文键盘（ascii_mode）下的句号
@@ -948,24 +977,28 @@ preset_keys:
   Space_en: {toggle: en_mode, states: [ "中英混输", "English" ], slide_cursor: true, send: space}
   Space_letter: {label: "Letter", slide_cursor: true, send: space}
   En_mode: {toggle: en_mode, functional: false, send: SWITCH_CHARSET, states: [ 中英, 英文 ]}
+  Zenkaku_Hankaku: {toggle: full_shape, send: SWITCH_CHARSET, states: [ 半角, 全角 ]}
   Punct_switch: {toggle: ascii_punct, send: SWITCH_CHARSET, states: [ 。，, ．， ]}
   # trime设置
   IME_switch: {label: '🌎', send: LANGUAGE_SWITCH} #弹出对话框选择输入法
   Theme_settings: {label: 主题, send: SETTINGS, option: "theme"}
   Color_switch: {label: 配色, functional: false, send: PROG_RED}
+  Help: {label: '?', send: 'Help'}
   Settings: {label: 设置, functional: false, send: SETTINGS}
   hide_key_symbol: {label: 隐藏符号, send: FUNCTION, command: switch_hide_key_symbol}
   hide_key_hint: {label: 隐藏注解, send: FUNCTION, command: switch_hide_key_hint}
    
  # trime命令
   Time: {label: 时间, send: FUNCTION, command: date, option: "HH:mm:ss"} #时间： date 格式
-  date_time: {label: time, send: FUNCTION, command: date, option: "yyyy-MM-dd  HH:mm:ss"}
+  date_time: {label: time, command: date, option: "yyyy-MM-dd  HH:mm:ss"}
 
 
   # 22自定义功能键
 
+  Control_L: {label: "退格", send: Control_L, functional: false}
   delimiterD: {label: "次选", send: 2}
 
+  Tab: {label: 字词, send: Tab}
 
   # 用于 popup 的预设键：
   a-p: { commit: a, label: 'a ' }

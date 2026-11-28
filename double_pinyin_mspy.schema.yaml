@@ -210,7 +210,7 @@ pin_cand_filter:
 
 # 主翻译器，拼音
 grammar:
-  language: qwen14b-zh-hans
+  language: zh-hans-t-essay-bgw
 translator:
   dictionary: leslie         # 挂载词库 leslie.dict.yaml
   prism: double_pinyin_mspy     # 多方案共用一个词库时，为避免冲突，需要用 prism 指定一个名字。
@@ -220,8 +220,8 @@ translator:
   max_word_length: 10
   core_word_length: 4
   contextual_suggestions: true
-  max_homophones: 8
-  max_homographs: 8
+  max_homophones: 10
+  max_homographs: 10
   max_sentences: 2            # 造句数量，偏好长句输入可设置大于 1，librime ≥ 1.17.0
   spelling_hints: 8             # corrector.lua ：为了让错音错字提示的 Lua 同时适配全拼双拼，将拼音显示在 comment 中
   always_show_comments: true    # corrector.lua ：Rime 默认在 preedit 等于 comment 时取消显示 comment，这里强制一直显示，供 corrector.lua 做判断用。
@@ -375,7 +375,8 @@ recognizer:
 key_binder:
   import_preset: default  # 从 default.yaml 继承通用的
   search: "`"             # 辅码引导符，要添加到 speller/alphabet
-  # bindings:             # 也可以再增加方案专有的
+  bindings/+:             # 追加方案专有快捷键（必须是列表格式，带 -）
+    - { when: composing, accept: Control+Shift+9, send: semicolon }
 
 
 # editor 用来定制操作键的行为，以下是默认行为 https://github.com/rime/librime/blob/master/src/rime/gear/editor.cc
